@@ -50,7 +50,7 @@ namespace Pathfinder2E.Core.Spells
         public virtual IReadOnlyCollection<Trait> Traditions => new ReadOnlyCollection<Trait>(Traits.Where(TraitExtensions.IsTraditionTrait).ToArray());
 
         /// <inheritdoc />
-        public abstract IReadOnlyCollection<SpellComponents> Components { get; }
+        public abstract IReadOnlyCollection<SpellComponent> Components { get; }
 
         /// <inheritdoc />
         public abstract byte Level { get; }
@@ -65,7 +65,7 @@ namespace Pathfinder2E.Core.Spells
             var traits = Traits.ToHashSet(); 
 
             // add in traits which are defined by spell components
-            foreach (var trait in Components.Select(SpellComponentExtensions.GetAssociatedTrait))
+            foreach (var trait in Components.Select(SpellComponentExtensions.ToAssociatedTrait))
             {
                 traits.Add(trait);
             }

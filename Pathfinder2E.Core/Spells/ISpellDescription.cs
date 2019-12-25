@@ -26,7 +26,7 @@ namespace Pathfinder2E.Core.Spells
         /// <summary>
         /// Gets the components of the spell.
         /// </summary>
-        IReadOnlyCollection<SpellComponents> Components { get; }
+        IReadOnlyCollection<SpellComponent> Components { get; }
 
         /// <summary>
         /// Gets the school of magic to which this spell belongs.

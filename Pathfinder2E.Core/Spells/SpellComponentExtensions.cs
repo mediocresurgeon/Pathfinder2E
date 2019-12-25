@@ -4,7 +4,7 @@ using Pathfinder2E.Core.Traits;
 namespace Pathfinder2E.Core.Spells
 {
     /// <summary>
-    /// Extension methods for <see cref="SpellComponents"/>.
+    /// Extension methods for <see cref="SpellComponent"/>.
     /// </summary>
     public static class SpellComponentExtensions
     {
@@ -13,15 +13,15 @@ namespace Pathfinder2E.Core.Spells
         /// </summary>
         /// <param name="spellComponent">The spell component.</param>
         /// <returns>The <see cref="Trait"/> associated with the spell component.</returns>
-        public static Trait GetAssociatedTrait(this SpellComponents spellComponent)
+        public static Trait ToAssociatedTrait(this SpellComponent  spellComponent)
         {
             switch (spellComponent)
             {
-                case SpellComponents.Focus:
-                case SpellComponents.Material:
-                case SpellComponents.Somatic:
+                case SpellComponent.Focus:
+                case SpellComponent.Material:
+                case SpellComponent.Somatic:
                     return Trait.Manipulate;
-                case SpellComponents.Verbal:
+                case SpellComponent.Verbal:
                     return Trait.Concentrate;
                 default:
                     throw new InvalidEnumArgumentException(nameof(spellComponent), (int)spellComponent, spellComponent.GetType());

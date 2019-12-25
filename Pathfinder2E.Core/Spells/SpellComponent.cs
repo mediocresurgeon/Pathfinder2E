@@ -3,7 +3,7 @@
     /// <summary>
     /// Requirements to cast a spell.
     /// </summary>
-    public enum SpellComponents
+    public enum SpellComponent
     {
         /// <summary>
         /// A focus is an object that funnels the magical energy of the spell.

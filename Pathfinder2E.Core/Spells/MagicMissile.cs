@@ -15,7 +15,7 @@ namespace Pathfinder2E.Core.Spells
         public MagicMissile(IRulesElementMetadata metadata)
             : base(metadata, Trait.Evocation)
         {
-            Components = new SpellComponents[] { SpellComponents.Somatic, SpellComponents.Verbal };
+            Components = new SpellComponent[] { SpellComponent.Somatic, SpellComponent.Verbal };
             Traits = new Trait[] { Trait.Force, Trait.Arcane, Trait.Occult };
         }
 
@@ -32,7 +32,7 @@ namespace Pathfinder2E.Core.Spells
         public override Rarity Rarity => Rarity.Common;
 
         /// <inheritdoc />
-        public override IReadOnlyCollection<SpellComponents> Components { get; }
+        public override IReadOnlyCollection<SpellComponent> Components { get; }
 
         /// <inheritdoc />
         protected override IReadOnlyCollection<Trait> Traits { get; }
